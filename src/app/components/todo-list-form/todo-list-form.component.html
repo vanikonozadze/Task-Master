@@ -1,4 +1,4 @@
-<div class="list-container">
+<div class="main-container">
   <h1>T O D O</h1>
   <form (ngSubmit)="addList()">
     <input
@@ -9,4 +9,7 @@
       required
     />
   </form>
+  <div class="list-container">
+    <app-todo-list></app-todo-list>
+  </div>
 </div>

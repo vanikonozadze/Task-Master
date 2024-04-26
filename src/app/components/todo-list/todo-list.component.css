@@ -1,0 +1,13 @@
+.task {
+  width: 550px;
+  height: 50px;
+  outline: none;
+  border-radius: 5px;
+  font-size: 18px;
+  color: #fff;
+  background-color: hsl(235, 24%, 19%);
+}
+
+.task p {
+  padding-top: 15px;
+}

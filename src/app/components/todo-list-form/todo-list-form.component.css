@@ -15,3 +15,7 @@ input {
   color: #fff;
   background-color: hsl(235, 24%, 19%);
 }
+
+.list-container {
+  margin-top: 20px;
+}

@@ -1,13 +1,52 @@
 .task {
   width: 550px;
-  height: 50px;
+  height: 70px;
   outline: none;
   border-radius: 5px;
   font-size: 18px;
   color: #fff;
+  border-bottom: 1px solid black;
   background-color: hsl(235, 24%, 19%);
 }
 
 .task p {
-  padding-top: 15px;
+  padding-left: 20px;
+  padding-top: 20px;
+}
+
+.task button {
+  border-radius: 50%;
+  border: 1px solid black;
+  padding: 10px;
+  background: none;
+}
+
+.task span {
+  padding-left: 20px;
+}
+
+.task button.complete-task-button.completed {
+  background: linear-gradient(90deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  background: hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
+}
+
+.task span.crossed-out {
+  text-decoration: line-through;
+  color: hsl(236, 9%, 61%);
+}
+
+.bottom-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: hsl(0, 0%, 98%);
+  background-color: hsl(235, 24%, 19%);
+  height: 50px;
+  border-radius: 10px;
+}
+
+.bottom-div ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
 }

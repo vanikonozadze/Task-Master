@@ -14,6 +14,7 @@ export class TodoListFormComponent implements OnInit {
   ngOnInit(): void {}
 
   addList() {
-    this.taskService.addTasks(this.taskName);
+    this.taskService.addTask(this.taskName);
+    this.taskName = '';
   }
 }

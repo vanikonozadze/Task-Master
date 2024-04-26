@@ -1,5 +1,34 @@
 <div class="list-of-task-box">
   <div class="task" *ngFor="let task of taskArray">
-    <p>{{ task }}</p>
+    <p>
+      <button
+        class="complete-task-button"
+        (click)="toggleComplete(task)"
+        [class.completed]="isTaskCompleted(task)"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="11" height="9">
+          <path
+            fill="none"
+            [attr.stroke]="
+              isTaskCompleted(task) ? '#fff' : 'hsl(235, 24%, 19%)'
+            "
+            stroke-width="2"
+            d="M1 4.304L3.696 7l6-6"
+          />
+        </svg>
+      </button>
+      <span [class.crossed-out]="isTaskCompleted(task)">{{ task }}</span>
+    </p>
+  </div>
+  <div class="bottom-div">
+    <p>{{ taskArray.length }} items left</p>
+    <ul>
+      <li>All</li>
+      <li>Active</li>
+      <li>Completed</li>
+    </ul>
+    <p style="cursor: pointer" (click)="clearCompletedArray()">
+      Clear Completed
+    </p>
   </div>
 </div>

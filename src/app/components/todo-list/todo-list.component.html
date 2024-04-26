@@ -23,11 +23,13 @@
   <div class="bottom-div">
     <p>{{ taskArray.length }} items left</p>
     <ul>
-      <li>All</li>
-      <li>Active</li>
-      <li>Completed</li>
+      <li [class.isBlue]="showAllBool" (click)="showAllTasks()">All</li>
+      <li [class.isBlue]="activeBool" (click)="showActiveTasks()">Active</li>
+      <li [class.isBlue]="completedBool" (click)="showCompletedTasks()">
+        Completed
+      </li>
     </ul>
-    <p style="cursor: pointer" (click)="clearCompletedArray()">
+    <p class="clear-completed" (click)="clearCompletedArray()">
       Clear Completed
     </p>
   </div>

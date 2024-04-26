@@ -8,6 +8,10 @@ import { TaskService } from 'src/app/services/task.service';
 })
 export class TodoListComponent implements OnInit {
   taskArray: string[] = [];
+  activeArray: string[] = [];
+  activeBool: boolean = false;
+  showAllBool: boolean = false;
+  completedBool: boolean = false;
 
   constructor(private taskService: TaskService) {}
 
@@ -24,6 +28,42 @@ export class TodoListComponent implements OnInit {
 
   isTaskCompleted(task: string): boolean {
     return this.taskService.isTaskCompleted(task);
+  }
+
+  showAllTasks() {
+    this.showAllBool = !this.showAllBool;
+    this.activeBool = false;
+    this.completedBool = false;
+
+    this.taskArray = this.taskService.taskList;
+  }
+
+  showActiveTasks() {
+    this.activeBool = !this.activeBool;
+    this.showAllBool = false;
+    this.completedBool = false;
+
+    if (this.activeBool) {
+      this.taskArray = this.taskService.taskList.filter((task, index) => {
+        return !this.taskService.completedTasks[index];
+      });
+    } else {
+      this.taskArray = this.taskService.taskList;
+    }
+  }
+
+  showCompletedTasks() {
+    this.completedBool = !this.completedBool;
+    this.activeBool = false;
+    this.showAllBool = false;
+
+    if (this.completedBool) {
+      this.taskArray = this.taskService.taskList.filter((task, index) => {
+        return this.taskService.completedTasks[index];
+      });
+    } else {
+      this.taskArray = this.taskService.taskList;
+    }
   }
 
   clearCompletedArray(): void {

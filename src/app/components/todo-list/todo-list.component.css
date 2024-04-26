@@ -50,3 +50,19 @@
   list-style: none;
   gap: 20px;
 }
+
+.bottom-div ul li {
+  cursor: pointer;
+}
+
+.bottom-div ul li:hover {
+  color: hsl(220, 98%, 61%);
+}
+
+.clear-completed {
+  cursor: pointer;
+}
+
+.isBlue {
+  color: hsl(220, 98%, 61%);
+}

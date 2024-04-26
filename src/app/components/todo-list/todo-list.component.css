@@ -1,4 +1,5 @@
 .task {
+  position: relative;
   width: 550px;
   height: 70px;
   outline: none;
@@ -9,20 +10,28 @@
   background-color: hsl(235, 24%, 19%);
 }
 
-.task p {
+.task-content {
+  display: flex;
+  align-items: center;
   padding-left: 20px;
   padding-top: 20px;
 }
 
 .task button {
   border-radius: 50%;
-  border: 1px solid black;
+  border: 1px solid hsl(236, 9%, 61%);
   padding: 10px;
   background: none;
 }
 
 .task span {
   padding-left: 20px;
+}
+
+.delete-button {
+  position: absolute;
+  right: 40px;
+  cursor: pointer;
 }
 
 .task button.complete-task-button.completed {
@@ -53,16 +62,22 @@
 
 .bottom-div ul li {
   cursor: pointer;
+  color: hsl(236, 9%, 61%);
 }
 
 .bottom-div ul li:hover {
-  color: hsl(220, 98%, 61%);
+  color: #fff;
 }
 
 .clear-completed {
+  color: hsl(236, 9%, 61%);
   cursor: pointer;
 }
 
+.clear-completed:hover {
+  color: #fff;
+}
+
 .isBlue {
-  color: hsl(220, 98%, 61%);
+  color: hsl(220, 98%, 61%) !important;
 }

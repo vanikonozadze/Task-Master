@@ -1,6 +1,11 @@
 <div class="list-of-task-box">
-  <div class="task" *ngFor="let task of taskArray">
-    <p>
+  <div
+    class="task"
+    *ngFor="let task of taskArray"
+    (mouseenter)="toggleDeleteButton(task, true)"
+    (mouseleave)="toggleDeleteButton(task, false)"
+  >
+    <div class="task-content">
       <button
         class="complete-task-button"
         (click)="toggleComplete(task)"
@@ -17,11 +22,27 @@
           />
         </svg>
       </button>
-      <span [class.crossed-out]="isTaskCompleted(task)">{{ task }}</span>
-    </p>
+      <span [class.crossed-out]="isTaskCompleted(task)">{{
+        task.description
+      }}</span>
+      <svg
+        (click)="deleteItem(task)"
+        xmlns="http://www.w3.org/2000/svg"
+        width="18"
+        height="18"
+        class="delete-button"
+        *ngIf="task.showDeleteButton"
+      >
+        <path
+          fill="#494C6B"
+          fill-rule="evenodd"
+          d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z"
+        />
+      </svg>
+    </div>
   </div>
   <div class="bottom-div">
-    <p>{{ taskArray.length }} items left</p>
+    <p style="color: hsl(236, 9%, 61%)">{{ taskArray.length }} items left</p>
     <ul>
       <li [class.isBlue]="showAllBool" (click)="showAllTasks()">All</li>
       <li [class.isBlue]="activeBool" (click)="showActiveTasks()">Active</li>

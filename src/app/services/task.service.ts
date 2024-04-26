@@ -1,15 +1,16 @@
 import { Injectable } from '@angular/core';
+import { Task } from '../models/task.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TaskService {
-  taskList: string[] = [];
+  taskList: Task[] = [];
   completedTasks: boolean[] = [];
 
   constructor() {}
 
-  addTask(task: string): void {
+  addTask(task: Task): void {
     this.taskList.push(task);
     this.completedTasks.push(false);
   }
@@ -18,7 +19,7 @@ export class TaskService {
     this.completedTasks[index] = !this.completedTasks[index];
   }
 
-  isTaskCompleted(task: string): boolean {
+  isTaskCompleted(task: Task): boolean {
     const index = this.taskList.indexOf(task);
     if (index !== -1) {
       return this.completedTasks[index];

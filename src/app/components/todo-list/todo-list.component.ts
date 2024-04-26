@@ -1,3 +1,4 @@
+import { Task } from './../../models/task.model';
 import { Component, Input, OnInit } from '@angular/core';
 import { TaskService } from 'src/app/services/task.service';
 
@@ -7,11 +8,14 @@ import { TaskService } from 'src/app/services/task.service';
   styleUrls: ['./todo-list.component.css'],
 })
 export class TodoListComponent implements OnInit {
-  taskArray: string[] = [];
+  taskArray: Task[] = [];
   activeArray: string[] = [];
+
   activeBool: boolean = false;
   showAllBool: boolean = false;
   completedBool: boolean = false;
+
+  showDeleteButton: boolean = false;
 
   constructor(private taskService: TaskService) {}
 
@@ -19,15 +23,31 @@ export class TodoListComponent implements OnInit {
     this.taskArray = this.taskService.taskList;
   }
 
-  toggleComplete(task: string): void {
+  toggleComplete(task: Task): void {
     const index = this.taskArray.indexOf(task);
     if (index !== -1) {
       this.taskService.toggleCompletion(index);
     }
   }
 
-  isTaskCompleted(task: string): boolean {
+  isTaskCompleted(task: Task): boolean {
     return this.taskService.isTaskCompleted(task);
+  }
+
+  toggleDeleteButton(task: Task, isHovering: boolean): void {
+    if (isHovering) {
+      task.showDeleteButton = true;
+    } else {
+      task.showDeleteButton = false;
+    }
+  }
+
+  deleteItem(task: Task): void {
+    const index = this.taskArray.indexOf(task);
+    if (index !== -1) {
+      this.taskService.taskList.splice(index, 1);
+      this.taskService.completedTasks.splice(index, 1);
+    }
   }
 
   showAllTasks() {

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Task } from 'src/app/models/task.model';
 import { TaskService } from 'src/app/services/task.service';
 
 @Component({
@@ -7,14 +8,20 @@ import { TaskService } from 'src/app/services/task.service';
   styleUrls: ['./todo-list-form.component.css'],
 })
 export class TodoListFormComponent implements OnInit {
-  taskName: string = '';
+  taskModelData: string = '';
 
   constructor(private taskService: TaskService) {}
 
   ngOnInit(): void {}
 
   addList() {
-    this.taskService.addTask(this.taskName);
-    this.taskName = '';
+    if (this.taskModelData.trim() !== '') {
+      const newTask: Task = {
+        description: this.taskModelData,
+        showDeleteButton: false,
+      };
+      this.taskService.addTask(newTask);
+      this.taskModelData = '';
+    }
   }
 }

@@ -10,7 +10,9 @@ input {
   width: 550px;
   height: 70px;
   outline: none;
+  padding-left: 70px;
   border-radius: 5px;
+  border: none;
   font-size: 18px;
   color: #fff;
   background-color: hsl(235, 24%, 19%);

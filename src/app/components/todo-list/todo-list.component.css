@@ -39,6 +39,11 @@
   background: hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
 }
 
+.task button:hover {
+  border: 1px solid hsl(192, 100%, 67%);
+  cursor: pointer;
+}
+
 .task span.crossed-out {
   text-decoration: line-through;
   color: hsl(236, 9%, 61%);

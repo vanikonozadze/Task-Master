@@ -26,6 +26,7 @@
 
 .task span {
   padding-left: 20px;
+  color: hsl(233, 11%, 84%);
 }
 
 .delete-button {

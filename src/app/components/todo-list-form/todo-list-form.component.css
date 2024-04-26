@@ -14,8 +14,12 @@ input {
   border-radius: 5px;
   border: none;
   font-size: 18px;
-  color: #fff;
   background-color: hsl(235, 24%, 19%);
+  color: hsl(233, 11%, 84%);
+}
+
+input::placeholder {
+  color: hsl(233, 11%, 84%);
 }
 
 .list-container {

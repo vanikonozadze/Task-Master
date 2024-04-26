@@ -1,0 +1,17 @@
+h1 {
+  color: #fff;
+}
+
+form {
+  margin-top: 40px;
+}
+
+input {
+  width: 550px;
+  height: 50px;
+  outline: none;
+  border-radius: 5px;
+  font-size: 18px;
+  color: #fff;
+  background-color: hsl(235, 24%, 19%);
+}

@@ -1,3 +1,7 @@
+.list-of-task-box {
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2); /* Add light shadow */
+}
+
 .task {
   position: relative;
   width: 550px;
@@ -92,6 +96,20 @@
   background-color: #fff;
 }
 
+.light-color:hover {
+  color: black !important;
+}
+
 .black-color {
   color: hsl(233, 14%, 35%) !important;
 }
+
+.tick-color {
+  stroke: hsl(235, 24%, 19%);
+}
+
+/* 
+  [attr.stroke]="
+              isTaskCompleted(task) ? '#fff' : 'hsl(235, 24%, 19%)'
+            "
+*/

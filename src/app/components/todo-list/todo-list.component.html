@@ -12,7 +12,12 @@
         (click)="toggleComplete(task)"
         [class.completed]="isTaskCompleted(task)"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" width="11" height="9">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="11"
+          height="9"
+          *ngIf="this.taskService.darkMode; else lightBlock"
+        >
           <path
             fill="none"
             [attr.stroke]="
@@ -22,6 +27,16 @@
             d="M1 4.304L3.696 7l6-6"
           />
         </svg>
+        <ng-template #lightBlock>
+          <svg xmlns="http://www.w3.org/2000/svg" width="11" height="9">
+            <path
+              fill="none"
+              stroke="#fff"
+              stroke-width="2"
+              d="M1 4.304L3.696 7l6-6"
+            />
+          </svg>
+        </ng-template>
       </button>
       <span
         [class.black-color]="!this.taskService.darkMode"
@@ -47,13 +62,33 @@
   <div class="bottom-div" [class.light-back-color]="!this.taskService.darkMode">
     <p style="color: hsl(236, 9%, 61%)">{{ taskArray.length }} items left</p>
     <ul>
-      <li [class.isBlue]="showAllBool" (click)="showAllTasks()">All</li>
-      <li [class.isBlue]="activeBool" (click)="showActiveTasks()">Active</li>
-      <li [class.isBlue]="completedBool" (click)="showCompletedTasks()">
+      <li
+        [class.isBlue]="showAllBool"
+        (click)="showAllTasks()"
+        [class.light-color]="!this.taskService.darkMode"
+      >
+        All
+      </li>
+      <li
+        [class.isBlue]="activeBool"
+        (click)="showActiveTasks()"
+        [class.light-color]="!this.taskService.darkMode"
+      >
+        Active
+      </li>
+      <li
+        [class.isBlue]="completedBool"
+        (click)="showCompletedTasks()"
+        [class.light-color]="!this.taskService.darkMode"
+      >
         Completed
       </li>
     </ul>
-    <p class="clear-completed" (click)="clearCompletedArray()">
+    <p
+      class="clear-completed"
+      [class.light-color]="!this.taskService.darkMode"
+      (click)="clearCompletedArray()"
+    >
       Clear Completed
     </p>
   </div>

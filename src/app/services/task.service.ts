@@ -1,14 +1,22 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { Task } from '../models/task.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TaskService {
+  darkMode = false;
+  darkModeChanged: EventEmitter<boolean> = new EventEmitter<boolean>();
+
   taskList: Task[] = [];
   completedTasks: boolean[] = [];
 
   constructor() {}
+
+  toggleDarkMode() {
+    this.darkMode = !this.darkMode;
+    this.darkModeChanged.emit(this.darkMode);
+  }
 
   addTask(task: Task): void {
     this.taskList.push(task);

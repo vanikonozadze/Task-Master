@@ -1,5 +1,21 @@
-<div class="main">
-  <img src="../assets/images/bg-desktop-dark.jpg" alt="" class="back-img" />
+<div
+  class="main"
+  [ngStyle]="{
+    'background-color': taskService.darkMode ? 'hsl(235, 21%, 11%)' : '#ffffff'
+  }"
+>
+  <img
+    src="../assets/images/bg-desktop-dark.jpg"
+    alt="background image"
+    class="back-img"
+    *ngIf="this.taskService.darkMode; else elseBlock"
+  />
+  <ng-template #elseBlock>
+    <img
+      src="../assets/images/bg-desktop-light.jpg"
+      alt="background image"
+      class="back-img"
+  /></ng-template>
   <div class="list-container">
     <app-todo-list-form></app-todo-list-form>
   </div>

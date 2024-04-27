@@ -6,3 +6,7 @@
   font-optical-sizing: auto;
   font-style: normal;
 }
+
+html {
+  background-color: hsl(235, 21%, 11%);
+}

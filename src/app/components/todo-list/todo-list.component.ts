@@ -17,7 +17,7 @@ export class TodoListComponent implements OnInit {
 
   showDeleteButton: boolean = false;
 
-  constructor(private taskService: TaskService) {}
+  constructor(public taskService: TaskService) {}
 
   ngOnInit(): void {
     this.taskArray = this.taskService.taskList;
@@ -47,6 +47,18 @@ export class TodoListComponent implements OnInit {
     if (index !== -1) {
       this.taskService.taskList.splice(index, 1);
       this.taskService.completedTasks.splice(index, 1);
+
+      if (this.activeBool) {
+        this.taskArray = this.taskService.taskList.filter(
+          (t, i) => !this.taskService.completedTasks[i]
+        );
+      } else if (this.completedBool) {
+        this.taskArray = this.taskService.taskList.filter(
+          (t, i) => this.taskService.completedTasks[i]
+        );
+      } else {
+        this.taskArray = [...this.taskService.taskList];
+      }
     }
   }
 

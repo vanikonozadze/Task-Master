@@ -1,5 +1,15 @@
+.title-div {
+  display: flex;
+  justify-content: space-between;
+}
+
 h1 {
   color: #fff;
+  font-size: 42px;
+}
+
+.sun-moon-image {
+  cursor: pointer;
 }
 
 form {
@@ -16,6 +26,15 @@ input {
   font-size: 18px;
   background-color: hsl(235, 24%, 19%);
   color: hsl(233, 11%, 84%);
+}
+
+.light-back-color {
+  background-color: #fff;
+  color: black;
+}
+
+.light-back-color::placeholder {
+  color: rgb(94, 94, 94);
 }
 
 input::placeholder {

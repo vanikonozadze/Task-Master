@@ -6,7 +6,7 @@
   border-radius: 5px;
   font-size: 18px;
   color: #fff;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid hsl(236, 9%, 61%);
   background-color: hsl(235, 24%, 19%);
 }
 
@@ -86,4 +86,12 @@
 
 .isBlue {
   color: hsl(220, 98%, 61%) !important;
+}
+
+.light-back-color {
+  background-color: #fff;
+}
+
+.black-color {
+  color: hsl(233, 14%, 35%) !important;
 }

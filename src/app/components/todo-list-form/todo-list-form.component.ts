@@ -10,7 +10,7 @@ import { TaskService } from 'src/app/services/task.service';
 export class TodoListFormComponent implements OnInit {
   taskModelData: string = '';
 
-  constructor(private taskService: TaskService) {}
+  constructor(public taskService: TaskService) {}
 
   ngOnInit(): void {}
 
@@ -23,5 +23,9 @@ export class TodoListFormComponent implements OnInit {
       this.taskService.addTask(newTask);
       this.taskModelData = '';
     }
+  }
+
+  toggleDarkModeMethod() {
+    this.taskService.toggleDarkMode();
   }
 }

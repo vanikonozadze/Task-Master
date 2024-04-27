@@ -4,6 +4,7 @@
     *ngFor="let task of taskArray"
     (mouseenter)="toggleDeleteButton(task, true)"
     (mouseleave)="toggleDeleteButton(task, false)"
+    [class.light-back-color]="!this.taskService.darkMode"
   >
     <div class="task-content">
       <button
@@ -22,9 +23,11 @@
           />
         </svg>
       </button>
-      <span [class.crossed-out]="isTaskCompleted(task)">{{
-        task.description
-      }}</span>
+      <span
+        [class.black-color]="!this.taskService.darkMode"
+        [class.crossed-out]="isTaskCompleted(task)"
+        >{{ task.description }}</span
+      >
       <svg
         (click)="deleteItem(task)"
         xmlns="http://www.w3.org/2000/svg"
@@ -41,7 +44,7 @@
       </svg>
     </div>
   </div>
-  <div class="bottom-div">
+  <div class="bottom-div" [class.light-back-color]="!this.taskService.darkMode">
     <p style="color: hsl(236, 9%, 61%)">{{ taskArray.length }} items left</p>
     <ul>
       <li [class.isBlue]="showAllBool" (click)="showAllTasks()">All</li>

@@ -44,3 +44,15 @@ input::placeholder {
 .list-container {
   margin-top: 20px;
 }
+
+@media only screen and (max-width: 800px) {
+  input {
+    width: 425px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  input {
+    width: 350px;
+  }
+}

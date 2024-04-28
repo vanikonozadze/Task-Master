@@ -5,7 +5,7 @@ import { Task } from '../models/task.model';
   providedIn: 'root',
 })
 export class TaskService {
-  darkMode = false;
+  darkMode = true;
   darkModeChanged: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   taskList: Task[] = [];

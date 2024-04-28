@@ -99,9 +99,6 @@ export class TodoListComponent implements OnInit {
   }
 
   clearCompletedArray(): void {
-    console.log(this.taskService.taskList);
-    console.log(this.taskService.completedTasks);
-
     let startIndex = -1;
     let endIndex = -1;
 

@@ -65,11 +65,11 @@
   >
     <p>{{ taskArray.length }} items left</p>
     <p
-      [class.isBlue]="completedBool"
-      (click)="showCompletedTasks()"
+      class="clear-completed"
       [class.light-color]="!this.taskService.darkMode"
+      (click)="clearCompletedArray()"
     >
-      Completed
+      Clear Completed
     </p>
   </div>
   <div

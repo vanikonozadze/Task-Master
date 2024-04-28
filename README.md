@@ -27,4 +27,4 @@ TaskMaster is a feature-rich to-do application built with Angular, designed to s
 
 ## Author
 
-Vaniko Nozadze
+# Vaniko Nozadze

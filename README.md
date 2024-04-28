@@ -20,3 +20,7 @@ TaskMaster is a feature-rich to-do application built with Angular, designed to s
 
 *TaskMaster in Dark Mode*
 ![taskmaster1](https://github.com/vanikonozadze/Task-Master/assets/115501603/a24ebcf1-e95c-4705-a8cc-2ad7acbbf169)
+
+## Author
+
+- Website - https://todo-app-vnk.vercel.app/

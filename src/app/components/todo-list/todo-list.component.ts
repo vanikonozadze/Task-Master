@@ -60,6 +60,7 @@ export class TodoListComponent implements OnInit {
         this.taskArray = [...this.taskService.taskList];
       }
     }
+    this.taskArray = this.taskService.taskList;
   }
 
   showAllTasks() {
